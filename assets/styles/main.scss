@@ -1,0 +1,21 @@
+@import './0_settings/setting';
+
+@import './1_tools/tools';
+@import './1_tools/anime-transition';
+
+@import './2_generic/generic';
+
+@import './3_elements/elements';
+
+@import './4_objects/container';
+@import './4_objects/flexbox';
+
+@import './5_components/header';
+@import './5_components/hero';
+@import './5_components/service';
+@import './5_components/footer';
+
+@import './6_partials/about';
+@import './6_partials/feature';
+@import './6_partials/services';
+@import './6_partials/gallery';

@@ -1,0 +1,56 @@
+::-moz-selection {
+    background-color: transparent;
+}
+
+::selection {
+    background-color: transparent;
+}
+
+body {
+    // layout
+    margin: 0;
+
+    // typo
+    color: $color-primary-black;
+    font-size: 16px;
+    font-family: $font-primary;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+section {
+    // layout
+    margin: 55px 0;
+}
+
+ul {
+    // layout
+    padding: 0;
+}
+
+li {
+    // design
+    list-style: none;
+}
+
+h1 {
+    // layout
+    margin: 0;
+
+    // typo
+    color: $color-primary-pink;
+    font-size: 54px;
+    font-family: $font-secondary;
+    font-weight: 400;
+    line-height: 64px;
+}
+
+input {
+    // design
+    border: none;
+    outline: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}

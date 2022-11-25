@@ -1,0 +1,102 @@
+.features {
+    // layout
+    overflow: hidden;
+
+    &__slider {
+        // layout
+        position: relative;
+    }
+
+    &__image-wrapper {
+        // layout
+        position: relative;
+    }
+    
+    &__image {
+        // layout
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    &__outer-modal {
+        // layout
+        padding: 80px 0;
+    }
+
+    &__modal {
+        // layout
+        height: 100%;
+        display: flex;
+        position: relative;
+        min-height: 740px;
+        padding-left: 25px;
+        flex-direction: column;
+
+        // design
+        background-color: $color-secondary-light-pink;
+    }
+
+    &__content {
+        // layout
+        padding: 195px 65px 183px 0;
+        position: absolute;
+    }
+
+    &__bg-title {
+        // layout
+        display: block; 
+        margin-bottom: -40px;
+        
+        // typo
+        color: $color-primary-white;
+        font-size: 78px;
+        font-family: $font-display;
+        line-height: 90px;
+    }
+
+    &__title {
+        // layout
+        margin-bottom: 35px;
+    }
+
+    &__control-wrapper {
+        // layout
+        bottom:0;
+        position: absolute;
+        min-height: 65px;
+        margin-bottom: 30px;
+    }
+
+    &__control {
+        // typo
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        // event
+        cursor: pointer;
+    }
+
+    &__indicator {
+        // layout
+        display: block;
+        margin-top: 25px;
+        margin-left: 25px;
+
+        // typo
+        color: $color-primary-pink;
+        font-size: 24px;
+        font-family: $font-secondary;
+    }
+
+    &__seperator {
+        // layout
+        width: 60px;
+        height: 1px;
+        display: inline-block;
+        margin-bottom: 4px;
+
+        // design
+        background-color: $color-primary-pink;
+    }
+}

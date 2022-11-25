@@ -1,0 +1,122 @@
+.footer {
+    // layout
+    padding: 120px 0;
+
+    // design
+    background-color: $color-primary-black;
+
+    .flexbox__column--is-w6 {
+        &:first-child {
+            // layout
+            padding-right: 135px;
+
+            // design
+            border-right: 1px solid $color-primary-white;
+        }
+
+        &:last-child {
+            // layout
+            margin-left: 135px;
+        }
+    }
+
+    &__newsletter {
+        // layout
+        margin-bottom: 42px;
+
+        &__title {
+            // layout
+            display: block;
+            margin-bottom: 32px;
+
+            // typo
+            color: $color-primary-white;
+            font-size: 54px;
+            line-height: 64px;
+            font-family: $font-secondary;
+        }
+
+        &__input {
+            // layout
+            width: 100%;
+            display: block;
+            max-width: 585px;
+
+            // typo
+            color: $color-primary-white;
+            font-size: 16px;
+            font-family: $font-primary;
+
+            // design
+            border-bottom: 1px solid $color-primary-white;
+            background-color: transparent
+        }
+
+        &__info {
+            // layout
+            display: block;
+            margin-top: 26px;
+
+            // typo
+            color: $color-primary-white;
+            font-size: 12px;
+            line-height: 14px;
+            font-family: $font-primary;
+        }
+    }
+
+    &__business-hours {
+        &__days,
+        &__times {
+            // typo
+            color: $color-primary-white;
+        }
+
+        &__days {
+            // layout
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+
+    &__contact {
+        &__title {
+            // typo
+            color: $color-primary-white;
+        }
+
+        &__address,
+        &__phone,
+        &__email {
+            // layout
+            margin: 32px 0;
+            display: block;
+
+            // typo
+            color: $color-primary-white;
+            font-size: 16px;
+            line-height: 21px;
+            font-family: $font-primary;
+        }
+    }
+
+    &__social {
+        // layout
+        display: flex;
+
+        &__item {
+            // layout
+            margin: 0 0 0 20px;
+
+            &:first-child {
+                // layout
+                margin: 0;
+            }
+        }
+
+        &__image {
+            // layout
+            width: 22px;
+        }
+    }
+}

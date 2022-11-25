@@ -1,0 +1,32 @@
+.gallery {
+    &__title {
+        // layout
+        margin-bottom: 40px;
+    }
+
+    &__slider {
+        // layout
+        display: flex;
+    }
+
+    &__slide {
+        // layout
+        margin:0 50px;
+        display: flex;
+    }
+
+    &__image {
+        // layout
+        width: 550px;
+        height: 550px;
+        object-fit: cover;
+    }
+
+    &__index {
+        // typo
+        font-size: 32px;
+        font-family: $font-secondary;
+        line-height: 64px;
+        writing-mode: tb-rl; 
+    }
+}

@@ -1,0 +1,39 @@
+.about {
+    &__row {
+        // layout
+        margin-top: 50px;
+    }
+
+    &__image {
+        // layout
+        width: 100%;
+    }
+
+    &__bg-title {
+        // layout
+        display: block;
+        margin-bottom: -40px;
+
+        // typo
+        color: $color-secondary-light-pink;
+        font-family: $font-display;
+        font-size: 78px;
+        line-height: 90px;
+    }
+
+    &__subtitle {
+        // layout
+        display: block;
+        margin-bottom: 30px;
+
+        // typo
+        color: $color-primary-pink;
+        font-size: 14px;
+        font-family: $font-secondary;
+    }
+
+    &__paragraph {
+        // layout
+        padding-right: 25px;
+    }
+}

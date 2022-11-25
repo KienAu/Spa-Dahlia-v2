@@ -1,0 +1,86 @@
+.services {
+    &__aside {
+        // layout
+        position: relative;
+    }
+
+    &__aside-wrapper {
+        // layout
+        top: 25%;
+        position: sticky;
+
+    }
+
+    &__content {
+        // layout 
+        margin: 50px 0;
+    }
+
+    &__list {
+        // layout
+        margin-top: 50px;
+    }
+
+    &__item {
+        // layout
+        display: block;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        // typo
+        font-size: 20px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+
+        // event
+        cursor: pointer;
+
+        // animation
+        transition: all .5s ease;
+
+        &::before {
+            // layout
+            width: 0;
+            height: 1px;
+            display: inline-block;
+            content: ' ';
+
+            vertical-align: middle;
+
+            // design
+            background-color: $color-primary-black;
+
+            // animation
+            transition: all .5s ease;
+        }
+
+        &--is-active {
+            // typo
+            color: $color-primary-pink;
+
+            // animation
+            transition: all .5s ease;
+
+            &::before {
+                // layout
+                width: 32px;
+                margin-right: 24px;
+
+                // design
+                background-color: $color-primary-pink;
+
+                // animation
+                transition: all .5s ease;
+            }
+        }
+    }
+
+    &__message {
+        // layout
+        display: block;
+        max-width: 400px;
+
+        // typo
+        font-size: 12px;
+    }
+}

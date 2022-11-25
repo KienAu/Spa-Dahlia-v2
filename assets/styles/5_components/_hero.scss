@@ -1,0 +1,20 @@
+.hero {
+    &__image {
+        // layout
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    &__text-scroll {
+        // layout
+        display: block;
+        margin-top: 60px;
+
+        // typo
+        color: $color-secondary-pink;
+        text-align: center;
+        font-family: $font-primary;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}

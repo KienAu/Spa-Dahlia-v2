@@ -1,0 +1,13 @@
+.slide {
+    &-enter-active,
+    &-leave-active {
+        // animation
+        transition: opacity 0.5s ease;
+    }
+
+    &-enter-form,
+    &-leave-to {
+        // design
+        opacity: 0;
+    }
+}

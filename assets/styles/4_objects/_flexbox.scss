@@ -1,0 +1,59 @@
+.flexbox {
+    // layout
+    display: flex;
+
+    &__j-content-end {
+        // layout
+        justify-content: flex-end;
+    }
+
+    &__j-content-space-between {
+        // layout
+        justify-content: space-between;
+    }
+
+    &__align-start {
+        // layout
+        align-items: flex-start;
+    }
+
+    &__align-center {
+        // layout
+        align-items: center;
+    }
+
+    &__column {
+        // layout
+        flex-direction: column;
+
+        &--is-w9 {
+            // layout
+            width: 75%;
+        }
+
+        &--is-w8 {
+            // layout
+            width: 66.66666%;
+        }
+
+        &--is-w7 {
+            // layout
+            width: 56.33333%;
+        }
+
+        &--is-w6 {
+            // layout
+            width: 50%;
+        }
+
+        &--is-w5 {
+            // layout
+            width: 41.66666%;
+        }
+
+        &--is-w4 {
+            // layout
+            width: 33.33333%;
+        }
+    }
+}

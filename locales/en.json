@@ -1,0 +1,13 @@
+{
+    "scroll": "scroll",
+    "next": "next",
+    "prev": "prev",
+    "features": "features",
+    "$": " ${price}",
+    "+tax": "+tax",
+    "Services List": "Services List",
+    "Gallery": "Gallery",
+    "Join our newsletter": "Join our newsletter",
+    "Sign up to receive special offers and exclusive news about Spa Dahlia.": "Sign up to receive special offers and exclusive news about Spa Dahlia.",
+    "Visit us at": "Visit us at"
+}

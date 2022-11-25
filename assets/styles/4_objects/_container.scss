@@ -1,0 +1,11 @@
+.container {
+    // layout
+    margin: 0 auto;
+    max-width: 1440px;
+
+    &__fullwidth {
+        // layout
+        width: 100%;
+        overflow: hidden;
+    }
+}

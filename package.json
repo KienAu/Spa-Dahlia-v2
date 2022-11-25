@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:https": "nuxt dev --https",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.7.1",
+    "nuxt": "3.0.0-rc.13",
+    "vue-i18n": "^9.2.2"
+  },
+  "dependencies": {
+    "@storyblok/nuxt": "^4.4.2",
+    "axios": "^0.27.2",
+    "gsap": "npm:@gsap/shockingly@^3.11.3",
+    "nvm": "^0.0.4",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.1.0",
+    "yarn": "^1.22.19"
+  }
+}
