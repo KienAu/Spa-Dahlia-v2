@@ -1,4 +1,9 @@
 .hero {
+    // layout
+    margin: 0;
+    height: 100vh;
+    display: flex;
+
     &__image {
         // layout
         max-width: 100%;

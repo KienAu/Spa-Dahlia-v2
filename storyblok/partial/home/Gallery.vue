@@ -106,7 +106,7 @@
 </script>
 
 <template>
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <div class="container">
             <h1 class="gallery__title"> {{ $t('Gallery') }} </h1>
         </div>

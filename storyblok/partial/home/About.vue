@@ -9,7 +9,7 @@
 
 
 <template>
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="flexbox about__row">
                 <div class="flexbox__column--is-w9">

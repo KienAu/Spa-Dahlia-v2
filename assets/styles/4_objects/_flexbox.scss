@@ -12,6 +12,11 @@
         justify-content: space-between;
     }
 
+    &__j-content-center {
+        // layout
+        justify-content: center;
+    }
+
     &__align-start {
         // layout
         align-items: flex-start;

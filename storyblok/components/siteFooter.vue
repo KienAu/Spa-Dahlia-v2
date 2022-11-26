@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="flexbox">
                 <div class="flexbox__column--is-w6">

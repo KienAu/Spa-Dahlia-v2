@@ -1,7 +1,14 @@
 .header {
     // layout
-    margin: 30px 0;
+    top: 0;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 99;
+    position: fixed;
     max-height: 50px;
+
+    // design
+    background-color: $color-primary-white;
 
     &__container {
         // layout

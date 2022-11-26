@@ -26,14 +26,17 @@
                 servicesList.value[i].classList.remove('services__item--is-active')
             })
 
-            servicesList.value[i].addEventListener('click', (e) => {
-                servicesList.value[i].classList.remove('services__item--is-active')
+            servicesList.value[i].addEventListener('click', () => {
                 const id = servicesList.value[i].dataset.id
-                const idTo = '#' + id
-                let offsetYMiddle = (window.innerHeight - panels[i].offsetHeight) / 2
-                gsap.to(window, {scrollTo: {y: idTo, offsetY: offsetYMiddle}})
-                servicesList.value[i].classList.add('services__item--is-active')
-                console.log(panels[i].offsetHeight)
+                    const idTo = '#' + id
+                    let offsetYMiddle = (window.innerHeight - panels[i].offsetHeight) / 2
+                if (servicesList.value[i].classList.contain('services__item--is-active')) {
+
+                } else {
+                    servicesList.value[i].classList.remove('services__item--is-active')
+                    gsap.to(window, {scrollTo: {y: idTo, offsetY: offsetYMiddle}})
+                    servicesList.value[i].classList.add('services__item--is-active')
+                }
             })
 
             

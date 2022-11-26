@@ -1,5 +1,5 @@
 <script setup>
-    import gsap from 'gsap';
+    const gsap = useGsap();
 
     const featureData = defineProps({
         blok: {
@@ -33,22 +33,6 @@
         }
     }
 
-    const onEnter = (el, done) => {
-        gsap.to(el, {
-            duration: 1,
-            opacity: 1,
-            onComplete: done
-        })
-    }
-
-    const onLeave = (el, done) => {
-        gsap.to(el, {
-            duration: 1,
-            opacity: 0,
-            onComplete: done
-        })
-    }
-
     const formattedNumber = (n) => {
         return ('0' + n).slice(-2);
     }
@@ -56,26 +40,20 @@
 </script>
 
 <template>
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="flexbox flexbox__align-start">
                 <div class="flexbox__column--is-w4">
-                    <div class="features__slider">
-                        <TransitionGroup mode="out-in" :css="false" @enter="onEnter" @leave="onLeave">
-                        <div class="features__image-wrapper" v-for="(feature, index) of blok.feature" :key="index" >
-                            <img class="features__image" v-if="index === currentActiveSlide" :src="feature.image.filename" :alt="feature.image.alt" />
-                        </div>
-                    </TransitionGroup>
+                    <div class="features__image-wrapper">
+                        <img class="features__image" v-for="(feature, index) of blok.feature" :key="feature._uid" :class="{'features__image--is-show' : index === currentActiveSlide}" :src="feature.image.filename" :alt="feature.image.alt" />
                     </div>
                 </div>
                 <div class="flexbox__column--is-w8 features__outer-modal">
                     <div class="features__modal flexbox flexbox__column">
-                        <div class="features__content" v-for="(feature, index) of blok.feature" :key="index">
-                            <div v-if="index === currentActiveSlide">
-                                <span class="features__bg-title">{{ $t('features') }}</span>
-                                <h1 class="features__title">{{ feature.title }}</h1>
-                                <p class="features__paragraph">{{ feature.description }}</p>
-                            </div>
+                        <div class="features__content" v-for="(feature, index) of blok.feature" :key="index" :class="{'features__content--is-show' : index === currentActiveSlide}">
+                            <span class="features__bg-title">{{ $t('features') }}</span>
+                            <h1 class="features__title">{{ feature.title }}</h1>
+                            <p class="features__paragraph">{{ feature.description }}</p>
                         </div>
                         <div class="features__control-wrapper flexbox flexbox__column flexbox__j-content-space-between">
                             <span class="features__control" @click="handleSlideChange(1)">{{ $t('next') }}</span>
