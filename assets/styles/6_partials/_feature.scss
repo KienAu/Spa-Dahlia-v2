@@ -2,10 +2,22 @@
     // layout
     overflow: hidden;
 
+    .container {
+        @include respond-below(laptop) {
+            // layout
+            margin: 0;
+        }
+    }
+
     &__image-wrapper {
         // layout
         position: relative;
         min-height: 959px;
+
+        @include respond-below(laptop) {
+            // layout
+            overflow: hidden;
+        }
     }
     
     &__image {
@@ -19,6 +31,11 @@
 
         // animation
         transition: all .5s ease;
+
+        @include respond-below(laptop) {
+            // layout
+            min-width: 450px;
+        }
 
         &--is-show {
             // design
@@ -45,6 +62,12 @@
 
         // design
         background-color: $color-secondary-light-pink;
+
+        @include respond-below(tablet) {
+            // layout
+            min-height: 900px;
+            padding-left: 0;
+        }
     }
 
     &__content {
@@ -65,6 +88,24 @@
             // animation
             transition: all .5s ease;
         }
+
+        &__image {
+            // layout
+            display: none;
+
+            @include respond-below(tablet) {
+                // layout
+                width: 100%;
+                height: 365px;
+                display: block;
+                object-fit: cover;
+            }
+        }
+
+        @include respond-below(tablet) {
+            // layout
+            padding: 55px 30px 85px;
+        }
     }
 
     &__bg-title {
@@ -77,19 +118,55 @@
         font-size: 78px;
         font-family: $font-display;
         line-height: 90px;
+
+        @include respond-below(tablet) {
+            // typo
+            font-size: 32px;
+        }
     }
 
     &__title {
         // layout
         margin-bottom: 35px;
+
+        // typo
+        white-space: nowrap;
+
+        @include respond-below(tablet) {
+            // typo
+            font-size: 32px;
+            line-height: normal;
+        }
+    }
+
+    &__paragraph {
+        @include respond-below(tablet) {
+            // layout
+            margin-top: 95px;
+        }
     }
 
     &__control-wrapper {
         // layout
-        bottom:0;
+        bottom: 0;
         position: absolute;
         min-height: 65px;
-        margin-bottom: 30px;
+        margin-bottom: 30px; 
+
+        @include respond-below(tablet) {
+            // layout
+            z-index: 1;
+            padding: 0 30px;
+            position: unset;
+            min-height: unset;
+            margin-top: 605px;
+            flex-direction: row;
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            margin-top: 570px;
+        }
     }
 
     &__control {
@@ -109,7 +186,7 @@
 
         // typo
         color: $color-primary-pink;
-        font-size: 24px;
+        font-size: 32px;
         font-family: $font-secondary;
     }
 

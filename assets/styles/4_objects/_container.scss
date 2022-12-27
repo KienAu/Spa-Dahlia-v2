@@ -3,9 +3,15 @@
     margin: 0 auto;
     max-width: 1440px;
 
+    @include respond-below(laptop) {
+        // layout
+        margin: 0 30px;
+    }
+
     &__fullwidth {
         // layout
         width: 100%;
         overflow: hidden;
     }
 }
+

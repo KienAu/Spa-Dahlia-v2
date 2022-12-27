@@ -31,6 +31,21 @@
         // layout
         flex-direction: column;
 
+        &--is-w12 {
+            // layout
+            width: 100%;
+        }
+
+        &--is-w11 {
+            // layout
+            width: 81.66666%;
+        }
+
+        &--is-w10 {
+            // layout
+            width: 83.33333%;
+        }
+
         &--is-w9 {
             // layout
             width: 75%;
@@ -60,5 +75,157 @@
             // layout
             width: 33.33333%;
         }
+
+        &--is-w3 {
+            // layout
+            width: 25%;
+        }
+
+        &--is-w2 {
+            // layout
+            width: 16.66666%;
+        }
+
+        &--is-w1 {
+            // layout
+            width: 8.33333%;
+        }
+
+        @include respond-below(tablet) {
+            &--is-md-w12 {
+                // layout
+                width: 100%;
+            }
+    
+            &--is-md-w11 {
+                // layout
+                width: 81.66666%;
+            }
+    
+            &--is-md-w10 {
+                // layout
+                width: 83.33333%;
+            }
+    
+            &--is-md-w9 {
+                // layout
+                width: 75%;
+            }
+    
+            &--is-md-w8 {
+                // layout
+                width: 66.66666%;
+            }
+    
+            &--is-md-w7 {
+                // layout
+                width: 56.33333%;
+            }
+    
+            &--is-md-w6 {
+                // layout
+                width: 50%;
+            }
+    
+            &--is-md-w5 {
+                // layout
+                width: 41.66666%;
+            }
+    
+            &--is-md-w4 {
+                // layout
+                width: 33.33333%;
+            }
+    
+            &--is-md-w3 {
+                // layout
+                width: 25%;
+            }
+    
+            &--is-md-w2 {
+                // layout
+                width: 16.66666%;
+            }
+    
+            &--is-md-w1 {
+                // layout
+                width: 8.33333%;
+            }
+
+            &--is-md-none {
+                // layout
+                display: none;
+            }
+        }
+
+        @include respond-below(bigMobile) {
+            &--is-sm-w12 {
+                // layout
+                width: 100%;
+            }
+    
+            &--is-sm-w11 {
+                // layout
+                width: 81.66666%;
+            }
+    
+            &--is-sm-w10 {
+                // layout
+                width: 83.33333%;
+            }
+    
+            &--is-sm-w9 {
+                // layout
+                width: 75%;
+            }
+    
+            &--is-sm-w8 {
+                // layout
+                width: 66.66666%;
+            }
+    
+            &--is-sm-w7 {
+                // layout
+                width: 56.33333%;
+            }
+    
+            &--is-sm-w6 {
+                // layout
+                width: 50%;
+            }
+    
+            &--is-sm-w5 {
+                // layout
+                width: 41.66666%;
+            }
+    
+            &--is-sm-w4 {
+                // layout
+                width: 33.33333%;
+            }
+    
+            &--is-sm-w3 {
+                // layout
+                width: 25%;
+            }
+    
+            &--is-sm-w2 {
+                // layout
+                width: 16.66666%;
+            }
+    
+            &--is-sm-w1 {
+                // layout
+                width: 8.33333%;
+            }
+        }
+
+        &--on-md {
+            @include respond-below(tablet) {
+                // layout
+                flex-direction: column;
+            }
+        }
     }
+
 }

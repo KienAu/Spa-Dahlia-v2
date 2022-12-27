@@ -3,11 +3,34 @@
     margin: 0;
     height: 100vh;
     display: flex;
+    min-height: 1024px;
+
+    @include respond-below(bigMobile) {
+        // layout
+        height: auto;
+        display: block;
+        margin-top: 60px;
+        min-height: unset;
+    }
+
+    .container {
+        @include respond-below(tablet) {
+            // layout
+            margin: 0;
+        }
+    }
 
     &__image {
         // layout
         max-width: 100%;
         object-fit: cover;
+
+        @include respond-below(bigMobile) {
+            // layout
+            width:100%;
+            max-height: 1024px;
+            object-position: left;
+        }
     }
 
     &__text-scroll {
@@ -21,5 +44,10 @@
         font-family: $font-primary;
         letter-spacing: 1px;
         text-transform: uppercase;
+
+        @include respond-below(bigMobile) {
+            // layout
+            display: none;
+        }
     }
 }

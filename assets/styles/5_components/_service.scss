@@ -1,16 +1,16 @@
 .service {
     // layout
     display: flex;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
 
     &--has-info {
         // layout
-        margin-bottom: 16px;
+        padding-bottom: 16px;
     }
 
     &:last-child {
         // layout
-        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     &__price {
@@ -22,14 +22,20 @@
         font-size: 16px;
         font-family: $font-secondary;
         line-height: normal;
+
+        @include respond-below(tablet) {
+            // layout
+            max-width: 120px;
+        }
     }
 
     &__tax {
         // layout
-        vertical-align: text-top;
+        margin-left: 4px;
+        vertical-align: super;
 
         // typo
-        font-size: 14px;
+        font-size: 12px;
     }
 
     &__name {

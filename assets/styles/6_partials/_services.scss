@@ -12,23 +12,108 @@
         top: 25%;
         position: sticky;
 
+        
+        @include respond-below(laptop) {
+            // layout
+            margin: 0 16px 0 0;
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            margin: 0;
+            position: relative;
+        }
     }
 
     &__content {
         // layout 
         margin: 50px 0;
+
+        @include respond-below(bigMobile) {
+            // layout
+            margin: 20px 0;
+        }
+    }
+
+    &__content-container {
+        @include respond-below(bigMobile) {
+            // layout
+            position: relative;
+            height: 0;
+            overflow: hidden;
+
+            .services__title {
+                // layout
+                display: none;
+            }
+
+            &--is-active {
+                // layout
+                height: auto;
+            }
+        }
+    }
+
+    &__display-selected {
+        // layout
+        display: none;
+
+        // typo
+        color: $color-primary-pink;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        // event
+        cursor: pointer;
+
+        &::after {
+            // layout
+            width: 9px;
+            height: 6px;
+            content: '';
+            display: inline-block;
+            margin-left: 12px;
+
+            // design
+            background-image: url('/assets/icons/arrow-down.svg');
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            display: inline-block;
+        }
     }
 
     &__list {
         // layout
         margin-top: 50px;
+
+        @include respond-below(bigMobile) {
+            // layout
+            width: 100%;
+            margin: 0;
+            z-index: 1;
+            overflow: hidden;
+            position: absolute;
+            max-height: 0;
+
+            // design
+            background-color: $color-primary-white;
+            
+            &--is-active {
+                // layout
+                max-height: 500px;
+
+                // animation
+                transition: all .25s ease;
+            }
+        }
     }
 
     &__item {
         // layout
         display: block;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
+        margin-bottom: 40px;
 
         // typo
         font-size: 20px;
@@ -40,6 +125,19 @@
 
         // animation
         transition: all .5s ease;
+
+        @include respond-below(tablet) {
+            // layout
+            margin-bottom: 30px;
+
+            // typo
+            font-size: 16px;
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            margin: 10px 0;
+        }
 
         &::before {
             // layout
@@ -64,6 +162,11 @@
             // animation
             transition: all .5s ease;
 
+            @include respond-below(bigMobile) {
+                // layout
+                display: none;
+            }
+
             &::before {
                 // layout
                 width: 32px;
@@ -85,5 +188,23 @@
 
         // typo
         font-size: 12px;
+        
+        @include respond-below(tablet) {
+            // layout
+            max-width: 300px;
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            display: none;
+            max-width: unset;
+        }
+    }
+
+    &__wrapper {
+        @include respond-below(bigMobile) {
+            // layout
+            flex-direction: column;
+        }
     }
 }

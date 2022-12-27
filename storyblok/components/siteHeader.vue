@@ -5,17 +5,19 @@
             default: () => ({}),
         }
     })
-
     
-    const { gsap, ScrollTrigger, ScrollToPlugin } = useGsap();
-
+    const { gsap, ScrollTrigger, ScrollToPlugin } = useGsap()
     const navigation = navigationData.blok.navigation
     const navigationItem = ref(null)
-
-
+    const route = useRoute()
+    let language = route.params.slug.slice()
 
     onMounted(() => {
       const sections = gsap.utils.toArray('section')
+      const body = document.querySelector('body')
+      const menuBtn = document.getElementById('menu')
+      let isOpen = false
+
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
       for (let i in navigationItem.value) {
@@ -32,6 +34,9 @@
           const id = navigation[i].id
           const scrollTo = '#' + id
           gsap.to(window, {scrollTo: {y: scrollTo, offsetY: 100}})
+          navigationItem.value[i].classList.add('header__navigation__item--is-active')
+          menuBtn.classList.remove('header__menu-btn--is-open')
+          body.style.overflow = 'auto'
         })
       }
 
@@ -40,7 +45,6 @@
           trigger: section,
           start: 'top center',
           end: 'bottom center',
-          markers: true,
           onEnterBack: () => {
               navigationItem.value[index].classList.add('header__navigation__item--is-active')
           },
@@ -55,6 +59,18 @@
           }
         })
       })
+
+      menuBtn.addEventListener('click', () => {
+        isOpen = !isOpen 
+
+        if (isOpen === true) {
+          menuBtn.classList.add('header__menu-btn--is-open')
+          body.style.overflow = 'hidden'
+        } else if (!isOpen) {
+          menuBtn.classList.remove('header__menu-btn--is-open')
+          body.style.overflow = 'auto'
+        }
+      })
     })
 
 </script>
@@ -62,9 +78,17 @@
 <template>
   <header class="header">
     <div class="header__container">
+      <div class="header__menu-btn" id="menu">
+        <div class="header__menu-icon">
+          <span class="header__menu-icon__line"></span>
+          <span class="header__menu-icon__line"></span>
+        </div>
+      </div>
+
       <NuxtLink class="header__logo" to="/">
         <img class="header__logo__image" :src="blok.logo.filename" />
       </NuxtLink>
+
       <nav class="header__navigation">
         <ul class="header__navigation__list">
           <li ref="navigationItem" class="header__navigation__item" v-for="item in blok.navigation" :key="blok._uid">
@@ -74,13 +98,13 @@
       </nav>
       <div class="header__lang">
         <NuxtLink class="header__lang__link" to="/">
-          <span class="header__lang__text">
+          <span class="header__lang__text" :class="{'header__lang__text--is-active': language[0] != 'fr'}">
             EN
           </span>
         </NuxtLink>
         |
-        <NuxtLink class="header__lang__link" to="/">
-          <span class="header__lang__text">
+        <NuxtLink class="header__lang__link" to="/fr/accueil">
+          <span class="header__lang__text" :class="{'header__lang__text--is-active': language[0] === 'fr'}">
             FR
           </span>
         </NuxtLink>

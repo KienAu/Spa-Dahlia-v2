@@ -1,6 +1,9 @@
 .footer {
     // layout
+    margin: 0;
+    display: flex;
     padding: 120px 0;
+    min-height: 450px;
 
     // design
     background-color: $color-primary-black;
@@ -12,16 +15,40 @@
 
             // design
             border-right: 1px solid $color-primary-white;
+
+            @include respond-below(tablet) {
+                // layout
+                padding-right: 0;
+                padding-bottom: 75px;
+
+                // design
+                border-right: none;
+                border-bottom: 1px solid $color-primary-white;
+            }
         }
 
         &:last-child {
             // layout
             margin-left: 135px;
+
+            @include respond-below(tablet) {
+                // layout
+                margin-top: 75px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .flexbox__align-center {
+        @include respond-below(tablet) {
+            // layout
+            align-items: flex-start;
         }
     }
 
     &__newsletter {
         // layout
+        display: none;
         margin-bottom: 42px;
 
         &__title {
@@ -66,6 +93,20 @@
     }
 
     &__business-hours {
+        &__title {
+            // layout
+            display: block;
+            margin-bottom: 32px;
+
+            // typo
+            color: $color-primary-white;
+        }
+
+        &__day-times {
+            // layout
+            margin-bottom: 20px;
+        }
+
         &__days,
         &__times {
             // typo
