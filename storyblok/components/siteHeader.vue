@@ -18,6 +18,8 @@
       const menuBtn = document.getElementById('menu')
       let isOpen = false
 
+      gsap.to('header', {opacity: 1, delay: .25, duration: 1})
+
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
       for (let i in navigationItem.value) {
@@ -62,7 +64,6 @@
 
       menuBtn.addEventListener('click', () => {
         isOpen = !isOpen 
-
         if (isOpen === true) {
           menuBtn.classList.add('header__menu-btn--is-open')
           body.style.overflow = 'hidden'

@@ -7,6 +7,9 @@
     position: fixed;
     max-height: 50px;
 
+    // design
+    opacity: 0;
+
     @include respond-below(tablet) {
         // layout
         padding: 0;
@@ -36,8 +39,9 @@
 
             @include respond-below(tablet) {
                 // layout
-                max-width: 185px;
                 height: auto;
+                max-width: 185px;
+
             }
         }
     }
