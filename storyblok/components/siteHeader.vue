@@ -39,6 +39,10 @@
           navigationItem.value[i].classList.add('header__navigation__item--is-active')
           menuBtn.classList.remove('header__menu-btn--is-open')
           body.classList.remove('body--is-hidden')
+          gsap.to('.header__navigation', {
+            height: '0',
+            delay: .5,
+          })
         })
       }
 
