@@ -91,10 +91,12 @@
       })
 
       mm.add('(max-width: 1024px)', () => {
-          gsap.to('.header__navigation', {
+          navigationItem.value[i].addEventListener('click', () => {
+            gsap.to('.header__navigation', {
             height: '0',
             delay: .5,
           })
+        })
       })
     })
 
