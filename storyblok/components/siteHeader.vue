@@ -17,6 +17,7 @@
       const body = document.querySelector('body')
       const menuBtn = document.getElementById('menu')
       let isOpen = false
+      let mm = gsap.matchMedia();
 
       gsap.to('header', {opacity: 1, delay: .25, duration: 1})
 
@@ -39,10 +40,6 @@
           navigationItem.value[i].classList.add('header__navigation__item--is-active')
           menuBtn.classList.remove('header__menu-btn--is-open')
           body.classList.remove('body--is-hidden')
-          gsap.to('.header__navigation', {
-            height: '0',
-            delay: .5,
-          })
         })
       }
 
@@ -91,6 +88,13 @@
             duration: .25,
           })
         }
+      })
+
+      mm.add('(max-width: 1024px)', () => {
+          gsap.to('.header__navigation', {
+            height: '0',
+            delay: .5,
+          })
       })
     })
 
