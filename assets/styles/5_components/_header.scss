@@ -157,6 +157,17 @@
 
             // design
             background-color: $color-secondary-pink;
+
+            // animation
+            transition: height .5s ease;
+        }
+
+        &--is-active {
+            // layout
+            height: calc(100vh - 60px);
+
+            // animation
+            transition: height .5s ease;
         }
 
         &__list {

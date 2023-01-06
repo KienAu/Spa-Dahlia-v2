@@ -40,16 +40,14 @@
           navigationItem.value[i].classList.add('header__navigation__item--is-active')
           menuBtn.classList.remove('header__menu-btn--is-open')
           body.classList.remove('body--is-hidden')
+          isOpen = !isOpen
         })
 
         mm.add('(max-width: 1024px)', () => {
           navigationItem.value[i].addEventListener('click', () => {
-            gsap.to('.header__navigation', {
-            height: '0',
-            delay: .5,
+            document.querySelector('.header__navigation').classList.remove('header__navigation--is-active')
           })
         })
-      })
       }
 
       sections.forEach((section, index) => {
@@ -77,9 +75,7 @@
         if (isOpen === true) {
           menuBtn.classList.add('header__menu-btn--is-open')
           body.classList.add('body--is-hidden')
-          gsap.to('.header__navigation', {
-            height: 'calc(100vh - 60px)',
-          })
+          document.querySelector('.header__navigation').classList.add('header__navigation--is-active')
           gsap.to('.header__navigation__text', {
             opacity: 1,
             delay: .5,
@@ -87,11 +83,7 @@
         } else if (!isOpen) {
           menuBtn.classList.remove('header__menu-btn--is-open')
           body.classList.remove('body--is-hidden')
-          gsap.to('.header__navigation', {
-            height: '0',
-            delay: .5,
-          })
-
+          document.querySelector('.header__navigation').classList.remove('header__navigation--is-active')
           gsap.to('.header__navigation__text', {
             opacity: 0,
             duration: .25,

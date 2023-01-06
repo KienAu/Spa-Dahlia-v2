@@ -134,11 +134,13 @@
                     <h1 class="services__title">{{ blok.Services_list }}</h1>
                     <div class="services__aside-wrapper">
                         <span class="services__display-selected">{{ displayValue }}</span>
-                        <ul class="services__list">
-                            <li :id="'service_' + service.id " @click="selectedValue(service.name)" ref="servicesList" v-for="service in services" :key="service._uid" class="services__item" :data-id="service.id"> 
-                                {{ service.name }} 
-                            </li>
-                        </ul>
+                            <ul class="services__list">
+                                <li v-for="service in services" :key="service._uid">
+                                    <span v-if="service.disable === false" :id="'service_' + service.id" @click="selectedValue(service.name)" ref="servicesList"  class="services__item" :data-id="service.id"> 
+                                        {{ service.name }}
+                                    </span>
+                                </li>
+                            </ul>
                         <span class="services__message">
                             {{ blok.message }}
                         </span>
@@ -146,18 +148,20 @@
                 </div>
                 <div class="flexbox__column--is-w8 flexbox__column--is-md-w6 flexbox__column--is-sm-w12">
                     <div class="services__content-container" v-for="service in services" :key="service._uid" :id="service.id">
-                        <h1 class="services__title"> {{ service.name }} </h1>
-                        <ul class="services__content">
-                            <service 
-                                v-for="item, index in service.service_content" 
-                                :key="index"
-                                :name="item.name"
-                                :price="item.price"
-                                :tax="item.tax"
-                                :extra_info="item.extra_info"
-                                ref="serviceItem"
-                            />
-                        </ul>
+                        <span v-if="service.disable === false">
+                            <h1 class="services__title"> {{ service.name }} </h1>
+                            <ul class="services__content">
+                                <service 
+                                    v-for="item, index in service.service_content" 
+                                    :key="index"
+                                    :name="item.name"
+                                    :price="item.price"
+                                    :tax="item.tax"
+                                    :extra_info="item.extra_info"
+                                    ref="serviceItem"
+                                />
+                            </ul>
+                        </span>
                     </div>
                 </div>
             </div>
