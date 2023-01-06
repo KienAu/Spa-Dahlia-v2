@@ -41,6 +41,15 @@
           menuBtn.classList.remove('header__menu-btn--is-open')
           body.classList.remove('body--is-hidden')
         })
+
+        mm.add('(max-width: 1024px)', () => {
+          navigationItem.value[i].addEventListener('click', () => {
+            gsap.to('.header__navigation', {
+            height: '0',
+            delay: .5,
+          })
+        })
+      })
       }
 
       sections.forEach((section, index) => {
@@ -88,15 +97,6 @@
             duration: .25,
           })
         }
-      })
-
-      mm.add('(max-width: 1024px)', () => {
-          navigationItem.value[i].addEventListener('click', () => {
-            gsap.to('.header__navigation', {
-            height: '0',
-            delay: .5,
-          })
-        })
       })
     })
 

@@ -1,4 +1,6 @@
 .about {
+    // layout
+    overflow: hidden;
     &__row {
         // layout
         margin-top: 50px;
@@ -36,6 +38,11 @@
         @include respond-below(tablet) {
             // typo
             font-size: 44px;
+        }
+
+        @include respond-below(tablet) {
+            // typo
+            white-space: nowrap;
         }
     }
 

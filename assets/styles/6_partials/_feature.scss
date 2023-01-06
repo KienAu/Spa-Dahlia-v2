@@ -68,6 +68,11 @@
             min-height: 900px;
             padding-left: 0;
         }
+
+        @include respond-below(smallMobile) {
+            // layout
+            min-height: 1100px;
+        }
     }
 
     &__content {
@@ -137,6 +142,11 @@
             font-size: 32px;
             line-height: normal;
         }
+
+        @include respond-below(smallMobile) {
+            // typo
+            white-space: break-spaces;
+        }
     }
 
     &__paragraph {
@@ -166,6 +176,11 @@
         @include respond-below(bigMobile) {
             // layout
             margin-top: 570px;
+        }
+
+        @include respond-below(smallMobile) {
+            // layout
+            margin-top: 600px;
         }
     }
 
