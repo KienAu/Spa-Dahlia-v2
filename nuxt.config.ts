@@ -25,7 +25,7 @@ export default defineNuxtConfig({
             title: 'Spa Dahlia',
             meta: [
                 // <meta name="description" content="My amazing site">
-                { name: 'description', content: 'My amazing site.' }
+                { name: 'description', content: 'Located in the heart of the west island, in the prestigious Cadillac Fairview shopping center, Spa Dahlia takes nail fashion to a new level. The team at Spa Dahlia takes pride to make you look your best, step into a 5-7 with extraordinary shellac colors on your finger nails, well manicured feet that would make heads turn in an instant.' }
             ],
         }
     },

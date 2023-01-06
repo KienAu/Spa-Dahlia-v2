@@ -38,7 +38,7 @@
           gsap.to(window, {scrollTo: {y: scrollTo, offsetY: 100}})
           navigationItem.value[i].classList.add('header__navigation__item--is-active')
           menuBtn.classList.remove('header__menu-btn--is-open')
-          body.style.overflow = 'auto'
+          body.classList.remove('body--is-hidden')
         })
       }
 
@@ -66,10 +66,26 @@
         isOpen = !isOpen 
         if (isOpen === true) {
           menuBtn.classList.add('header__menu-btn--is-open')
-          body.style.overflow = 'hidden'
+          body.classList.add('body--is-hidden')
+          gsap.to('.header__navigation', {
+            height: 'calc(100vh - 60px)',
+          })
+          gsap.to('.header__navigation__text', {
+            opacity: 1,
+            delay: .5,
+          })
         } else if (!isOpen) {
           menuBtn.classList.remove('header__menu-btn--is-open')
-          body.style.overflow = 'auto'
+          body.classList.remove('body--is-hidden')
+          gsap.to('.header__navigation', {
+            height: '0',
+            delay: .5,
+          })
+
+          gsap.to('.header__navigation__text', {
+            opacity: 0,
+            duration: .25,
+          })
         }
       })
     })

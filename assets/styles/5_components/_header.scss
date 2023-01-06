@@ -89,11 +89,6 @@
                     }
                 }
             }
-
-            ~ .header__navigation {
-                // layout
-                display: flex;
-            }
         }
     }
 
@@ -154,11 +149,11 @@
             top: 60px;
             left: 0;
             width: 100vw;
-            height: calc(100vh - 60px);
+            height: 0;
+            display: flex;
             z-index: 999;
-            display: none;
             position: absolute;
-            overflow-y: scroll;
+            overflow-x: hidden;
 
             // design
             background-color: $color-secondary-pink;
@@ -171,7 +166,6 @@
             @include respond-below(tablet) {
                 // layout
                 flex-direction: column;
-
             }
 
             @include respond-below(bigMobile) {
@@ -182,6 +176,7 @@
 
         &__item {
             // layout
+            overflow: hidden;
             margin-right: 30px;
 
             // event 
@@ -221,12 +216,24 @@
             transition: all .5s ease;
 
             @include respond-below(tablet) {
+                // layout
+                display: inline-block;
+                overflow: hidden;
+
+                // design
+                opacity: 0;
+
                 // typo
                 font-size: 96px;
                 line-height: normal;
             }
 
             @include respond-below(bigMobile) {
+                // typo
+                font-size: 64px;
+            }
+
+            @include respond-below(smallMobile) {
                 // typo
                 font-size: 40px;
             }
