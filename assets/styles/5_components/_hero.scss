@@ -13,6 +13,11 @@
         min-height: unset;
     }
 
+    &__container {
+        // layout
+        margin-top: 110px;
+    }
+
     .container {
         @include respond-below(tablet) {
             // layout
