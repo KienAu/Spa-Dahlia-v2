@@ -1,6 +1,23 @@
 .services {
     // layout
     min-height: auto;
+
+    &__mobile {
+        // layout
+        display: none;
+
+        @include respond-below(tablet) {
+            // layout
+            display: block;
+        }
+    }
+
+    &__desktop {
+        @include respond-below(tablet) {
+            // layout
+            display: none;
+        }
+    }
     
     &__aside {
         // layout
