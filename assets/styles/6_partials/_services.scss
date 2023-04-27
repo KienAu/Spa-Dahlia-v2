@@ -6,14 +6,14 @@
         // layout
         display: none;
 
-        @include respond-below(tablet) {
+        @include respond-below(bigMobile) {
             // layout
             display: block;
         }
     }
 
     &__desktop {
-        @include respond-below(tablet) {
+        @include respond-below(bigMobile) {
             // layout
             display: none;
         }

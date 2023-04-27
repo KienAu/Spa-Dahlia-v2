@@ -9,10 +9,6 @@
     const { gsap, ScrollTrigger, ScrollToPlugin } = useGsap()
 
     const services = servicesData.blok.list
-    const servicesListDesktop = ref(null)
-    const servicesListMobile = ref(null)
-
-    let isMobile ;
 
     let displayValue = ref(services[0].name)
 
@@ -24,45 +20,40 @@
         const panels = gsap.utils.toArray('.services__content-container')
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
-        const servicesDropmenu = () =>{
+        const servicesDropmenu = () => {
             const displayService = document.querySelector('.services__mobile .services__display-selected')
             const dropdownServices = document.querySelector('.services__mobile .services__list')
             const servicesContent = document.querySelectorAll('.services__mobile .services__content-container')
+            const services = document.querySelectorAll('.services__mobile .services__item')
             let currentService = servicesContent[0].id
 
             if (currentService === servicesContent[0].id) {
                 servicesContent[0].classList.add('services__content-container--is-active')                           
             }
+            services[0].classList.add('services__item--is-active')
 
-            for (let i in servicesListMobile.value) {
-                servicesListMobile.value[i].classList.remove('services__item--is-active')
-                servicesListMobile.value[0].classList.add('services__item--is-active')
-                const servicesListId = servicesListMobile.value[i].dataset.id
+            services.forEach((service, i) => {
+                service.classList.remove('services__item--is-active')
+                const servicesListId = service.dataset.id
                 
-                servicesListMobile.value[i].addEventListener('click', (e) => {
-
+                service.addEventListener('click', () => {
                     currentService = servicesContent[i].id
 
                     for (const item of servicesContent) {
                         item.classList.remove('services__content-container--is-active')
                     }
 
-                    for (const service of servicesListMobile.value) {
+                    for (const service of services) {
                         service.classList.remove('services__item--is-active')
                     }
                     
                     dropdownServices.classList.remove('services__list--is-active')
                     if (currentService === servicesListId) {
                         servicesContent[i].classList.add('services__content-container--is-active')
-                        servicesListMobile.value[i].classList.add('services__item--is-active')
+                        service.classList.add('services__item--is-active')
                     }
-
-                    /* gsap.to(servicesContent[i], {
-                        height: servicesContent[i].offsetHeight,
-                        duration: .5
-                    })*/
                 })
-            }
+            }) 
 
             displayService.addEventListener('click', () => {
                 if (dropdownServices.classList.contains('services__list--is-active')) {
@@ -70,50 +61,87 @@
                 } else {
                     dropdownServices.classList.add('services__list--is-active')
                 }
+
+                panels.forEach((panel) => {
+                    services.forEach((service) => {
+                        if (panel.id === service.dataset.id) {
+                            service.classList.add('services__item--is-active')
+                        }
+                    })
+
+                })
             })
         }
 
         const servicesAside = () => {
-            for (let i in servicesListDesktop.value) {
-                servicesListDesktop.value[i].addEventListener('mouseover', () => {
-                    servicesListDesktop.value[i].classList.add('services__item--is-active')
+            const services = document.querySelectorAll('.services__desktop .services__item')
+
+            services.forEach((service) =>  {
+                service.addEventListener('mouseover', () => {
+                    service.classList.add('services__item--is-active')
+                    
                 })
 
-                servicesListDesktop.value[i].addEventListener('mouseleave', () => {
-                    servicesListDesktop.value[i].classList.remove('services__item--is-active')
+                service.addEventListener('mouseleave', () => {
+                    panels.forEach((panel) => {
+                        const serviceData = service.dataset.id + 'Desktop'
+                        if (panel.id === serviceData) {
+                            if (panel.classList.contains('is-active')) {
 
-                    if (servicesListDesktop.value[i].classList.contains('services__item--is-active')) {
-                        servicesListDesktop.value[i].classList.add('services__item--is-active')
-                    }
+                            } else {
+                                service.classList.remove('services__item--is-active')
+                            }
+                        }
+                    })
                 })
 
-                servicesListDesktop.value[i].addEventListener('click', () => {
-                    const servicesListId = servicesListDesktop.value[i].dataset.id
+                service.addEventListener('click', () => {
+                    const servicesListId = service.dataset.id
                     const idTo = '#' + servicesListId + 'Desktop'
                     // let offsetYMiddle = (window.innerHeight - panels[i].offsetHeight) / 2
 
-                    servicesListDesktop.value[i].classList.remove('services__item--is-active')
+                    service.classList.remove('services__item--is-active')
                     gsap.to(window, {scrollTo: {y: idTo, offsetY: 100}})
-                    servicesListDesktop.value[i].classList.add('services__item--is-active')
+                    service.classList.add('services__item--is-active')
                 })
-            }
+            })
 
-            panels.forEach((panel, index) => {
+            panels.forEach((panel) => {
+                const isActive = () => {
+                    services.forEach((service) =>  {
+                        const serviceData = service.dataset.id + 'Desktop'
+                        if (serviceData === panel.id) {
+                            service.classList.add('services__item--is-active')
+                            panel.classList.add('is-active')
+                        }
+                    })
+                }
+
+                const isNotActive = () => {
+                    services.forEach((service) =>  {
+                        const serviceData = service.dataset.id + 'Desktop'
+                        if (serviceData === panel.id) {
+                            service.classList.remove('services__item--is-active')
+                            panel.classList.remove('is-active')
+                        }
+                    })
+                }
+
                 ScrollTrigger.create({
                     trigger: panel,
                     start: 'top center',
                     end: 'bottom center',
                     onEnterBack: () => {
-                        servicesListDesktop.value[index].classList.add('services__item--is-active')
+                        isActive()
                     },
                     onEnter: () => {
-                        servicesListDesktop.value[index].classList.add('services__item--is-active')
+                        isActive()
                     },
                     onLeave: () => {
-                        servicesListDesktop.value[index].classList.remove('services__item--is-active')
+                        isNotActive()
                     },
                     onLeaveBack: () => {
-                        servicesListDesktop.value[index].classList.remove('services__item--is-active')
+                        isNotActive()
                     }
                 })
             })
@@ -142,7 +170,7 @@
                         <span class="services__display-selected">{{ displayValue }}</span>
                             <ul class="services__list">
                                 <li v-for="service in services" :key="service._uid">
-                                    <span v-if="service.disable === false" :id="'service_' + service.id" @click="selectedValue(service.name)" ref="servicesListMobile"  class="services__item" :data-id="service.id"> 
+                                    <span v-if="service.disable === false" :id="'service_' + service.id" @click="selectedValue(service.name)"  class="services__item" :data-id="service.id"> 
                                         {{ service.name }}
                                     </span>
                                 </li>
@@ -180,7 +208,7 @@
                         <span class="services__display-selected">{{ displayValue }}</span>
                             <ul class="services__list">
                                 <li v-for="service in services" :key="service._uid">
-                                    <span v-if="service.disable === false" :id="'service_' + service.id" @click="selectedValue(service.name)" ref="servicesListDesktop"  class="services__item" :data-id="service.id"> 
+                                    <span v-if="service.disable === false" :id="'service_' + service.id" @click="selectedValue(service.name)" class="services__item" :data-id="service.id"> 
                                         {{ service.name }}
                                     </span>
                                 </li>
