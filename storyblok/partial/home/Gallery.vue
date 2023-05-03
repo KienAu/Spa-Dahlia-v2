@@ -17,7 +17,7 @@
     onMounted(() => {
         gsap.registerPlugin(Draggable)
 
-        function horizontalLoop(items, config) {
+        const horizontalLoop = (items, config) => {
           items = gsap.utils.toArray(items);
           config = config || {};
           let tl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
@@ -51,7 +51,7 @@
               .add("label" + i, distanceToStart / pixelsPerSecond);
             times[i] = distanceToStart / pixelsPerSecond;
           }
-          function toIndex(index, vars) {
+          const toIndex = (index, vars) => {
             vars = vars || {};
             (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
             let newIndex = gsap.utils.wrap(0, length, index),
