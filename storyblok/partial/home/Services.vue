@@ -64,8 +64,10 @@
 
                 panels.forEach((panel) => {
                     services.forEach((service) => {
-                        if (panel.id === service.dataset.id) {
+                        if (panel.id === service.dataset.id.toLowerCase()) {
                             service.classList.add('services__item--is-active')
+                        } else {
+                            service.classList.remove('services__item--is-active')
                         }
                     })
 
@@ -167,7 +169,7 @@
                 <div class="services__aside flexbox__column--is-w4 flexbox__column--is-md-w6 flexbox__column--is-sm-w12">
                     <h1 class="services__title">{{ blok.Services_list }}</h1>
                     <div class="services__aside-wrapper">
-                        <span class="services__display-selected">{{ displayValue }}</span>
+                        <span class="services__display-selected" :data-id="displayValue">{{ displayValue }}</span>
                             <ul class="services__list">
                                 <li v-for="service in services" :key="service._uid">
                                     <span v-if="service.disable === false" :id="'service_' + service.id" @click="selectedValue(service.name)"  class="services__item" :data-id="service.id"> 

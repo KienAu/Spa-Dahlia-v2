@@ -112,17 +112,17 @@
             z-index: 1;
             overflow: hidden;
             position: absolute;
-            max-height: 0;
+            max-height: 0px;
 
             // design
             background-color: $color-primary-white;
-            
+
             &--is-active {
                 // layout
                 max-height: 500px;
 
-                // animation
-                transition: all .25s ease;
+                            // animation
+            transition: all .25s ease-in-out;
             }
         }
     }
