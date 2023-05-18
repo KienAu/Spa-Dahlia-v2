@@ -62,15 +62,10 @@
                     dropdownServices.classList.add('services__list--is-active')
                 }
 
-                panels.forEach((panel) => {
-                    services.forEach((service) => {
-                        if (panel.id === service.dataset.id.toLowerCase()) {
-                            service.classList.add('services__item--is-active')
-                        } else {
-                            service.classList.remove('services__item--is-active')
-                        }
-                    })
-
+                services.forEach((service) => {
+                    if (service.dataset.id === displayService.dataset.id.toLowerCase()) {
+                        service.classList.add('services__item--is-active')
+                    }
                 })
             })
         }
