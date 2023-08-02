@@ -9,6 +9,18 @@ export default defineNuxtConfig({
         apiOptions: { "region": "us" }
     }]],
     css: ["@/assets/styles/main.scss"],
+    routeRules: {
+        '/index-french.html': { redirect: '/fr/accueil' },
+        '/&sa=U&ved=0ahUKEwjqwNLFhsruAhVFcBQKHfKCCTcQ61gIsEgoEDDaAQ&usg=AOvVaw1wLafaXIYKRi5KtgsnUir': { redirect: '/' },
+        '/?pageid=6': { redirect: '/' },
+        '/?pageid=1': { redirect: '/' },
+        '/?pageid=2': { redirect: '/' },
+        '/fr/': { redirect: '/fr/accueil' },
+        '/fr': { redirect: '/fr/accueil' },
+        '/en/': { redirect: '/' },
+        '/index.html': { redirect: '/' },
+        '/wp-content/themes/dreamspa/framework/sociable_shortcodes.php': { redirect: '/' },
+    },
     vite: {
         plugins: [
             VueI18nVitePlugin({
