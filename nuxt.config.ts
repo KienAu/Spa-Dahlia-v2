@@ -45,4 +45,9 @@ export default defineNuxtConfig({
     build: {
         transpile:["gsap"],
     },
+    router: {
+        options: {
+            strict: true,
+        },
+    },
 })
