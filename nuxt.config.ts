@@ -50,4 +50,5 @@ export default defineNuxtConfig({
             strict: true,
         },
     },
+    ssr: true
 })
