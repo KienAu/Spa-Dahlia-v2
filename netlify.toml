@@ -1,0 +1,15 @@
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  # Set minimum thresholds for each report area
+  [plugins.inputs.thresholds]
+    performance = 0.9
+
+
+  # to audit a specific absolute url
+  [[plugins.inputs.audits]]
+    url = "https://spadahlia.com"
+
+    # you can specify thresholds per audit
+    [plugins.inputs.audits.thresholds]
+      performance = 0.8

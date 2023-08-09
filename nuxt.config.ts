@@ -45,7 +45,4 @@ export default defineNuxtConfig({
     build: {
         transpile:["gsap"],
     },
-    generate: {
-    fallback: true
-    }
 })
