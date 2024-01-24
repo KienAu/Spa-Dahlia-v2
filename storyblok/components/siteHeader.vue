@@ -105,7 +105,7 @@
       </div>
 
       <NuxtLink class="header__logo" to="/">
-        <img class="header__logo__image" :src="blok.logo.filename" />
+        <img class="header__logo__image" :src="blok.logo.filename" alt="spa dahlia logo" />
       </NuxtLink>
 
       <nav class="header__navigation">
