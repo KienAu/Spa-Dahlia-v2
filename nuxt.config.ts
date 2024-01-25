@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             charset: 'utf-16',
-            viewport: 'initial-scale=1', 
+            viewport: 'width=device-width, initial-scale=1', 
             title: 'Spa Dahlia | nail salon',
             meta: [
                 { name: 'description', content: 'The team at Spa Dahlia takes pride to make you look your best, step into a 5-7 with extraordinary shellac colors on your finger nails, well manicured feet that would make heads turn in an instant.' },
