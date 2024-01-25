@@ -1,0 +1,29 @@
+.promo {
+    .container {
+        // layout
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        // design
+        background-color: $color-secondary-light-pink;
+
+        @include respond-below(bigMobile) {
+            // layout
+            margin-top: 50px;
+            padding: 50px 32px;
+        }
+    }
+
+    h2 {
+        // typo
+        font-family: $font-secondary;
+        font-weight: normal;
+    }
+
+    .promo__text {
+        // typo
+        font-size: 14px;
+    }
+}
