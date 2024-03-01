@@ -8,7 +8,8 @@ export default defineNuxtConfig({
         accessToken: process.env.STORYBLOK_API_TOKEN,
         apiOptions: { "region": "us" },
     }, 
-    '@nuxtjs/seo']],
+    '@nuxtjs/seo', '@nuxtjs/robots'
+]],
     css: ["@/assets/styles/main.scss"],
     routeRules: {
         '/index-french.html': { redirect: '/fr/accueil' },
@@ -55,5 +56,9 @@ export default defineNuxtConfig({
         name: 'Spa Dahlia | nail salon',
         description: 'The team at Spa Dahlia takes pride to make you look your best, step into a 5-7 with extraordinary shellac colors on your finger nails, well manicured feet that would make heads turn in an instant.',
         defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
-      }
+    },
+    robot: {
+        UserAgent: '*',
+        Disallow: ''
+    }
 })
