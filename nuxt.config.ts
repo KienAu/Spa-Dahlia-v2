@@ -5,11 +5,13 @@ import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     modules: [['@storyblok/nuxt', { 
-        accessToken: process.env.STORYBLOK_API_TOKEN,
-        apiOptions: { "region": "us" },
-    }, 
-    '@nuxtjs/seo', '@nuxtjs/robots'
-]],
+            accessToken: process.env.STORYBLOK_API_TOKEN,
+            apiOptions: { "region": "us" },
+        }, 
+        '@nuxtjs/seo', 
+        '@nuxtjs/robots',
+        'nuxt-simple-robots'
+    ]],
     css: ["@/assets/styles/main.scss"],
     routeRules: {
         '/index-french.html': { redirect: '/fr/accueil' },
